@@ -119,6 +119,7 @@ MINI_GUIDA = [
  ("Cosa sono le tue Gel Tip", ["Estensioni in gel morbido applicate su tutta l'unghia, leggere e naturali."]),
  ("Nei primi giorni", ["Evita acqua molto calda e prodotti aggressivi per 24 ore. [nostra]"]),
  ("Cura quotidiana", ["Usa i guanti per le pulizie. [nostra]", "Non usare le unghie come strumento (aprire lattine, grattare). [nostra]", "Olio per cuticole ogni giorno. [nostra]"]),
+ ("Segnali da non ignorare", ["Prurito, rossore, bollicine, dolore o macchie gialle/verdi sotto l'unghia: scrivici subito, non aspettare l'appuntamento.", "In caso di dubbio ti consigliamo di sentire il medico: noi ci occupiamo della parte estetica."]),
  ("Se ti si rompe qualcosa", ["La tua unghia naturale è protetta: si rompe solo la tip.", "Non staccarla da sola: scrivici e la sistemiamo."]),
  ("Quando tornare", ["Ogni 3–6 settimane: rimuoviamo la tip e ne applichiamo una nuova.", "Puoi cambiare forma e lunghezza a ogni appuntamento."]),
 ]
@@ -139,4 +140,33 @@ SLIDE_PUNTI = [
  ["Scalino: punta dedicata 18.000 giri, mano leggera", "Lima fine solo nel giro cuticola", "Deidratante prima del colore", "Colore: mai partire dalla cuticola"],
  ["Nessun refill: si rimuove e si rifà (3–6 settimane)", "Taglia, togli colore con la fresa, ammollo 5 min", "Pusher + passata di fresa, poi nuova tip", "Una mano in ammollo, lavori sull'altra"],
  ["Unghia naturale corta = protetta", "Se prendi un colpo si rompe solo la tip", "Risultato sottile e naturale", "Mai staccarla da sola"],
+]
+
+# --- Bonus: anomalie (lezione di 49 min) e materiali ---
+SEZIONI += [
+ ("15. Anomalie: quando agire e quando inviare al medico", [
+   "Regola d'oro: noi curiamo l'estetica, non la salute. Mai prescrivere farmaci o antimicotici. Se qualcosa non ci è chiaro o non è normale: cliente dal medico o dermatologo.",
+   "Criterio pratico: un trauma colpisce 1-3 unghie. Se l'anomalia è su molte o tutte le dita, ragionare come patologia e inviare dal medico.",
+   "Onicolisi (distacco dell'unghia dal letto ungueale): da trauma parte dal bordo libero o dai laterali. Con sangue o dolore: accorciare, disinfettare, rimandare. Si lavora solo sulla parte ancora salda; se il distacco è circa metà unghia o più, non si ricostruisce.",
+   "Distacco lieve (circa un terzo): tagliare la parte sollevata lasciando un bordo di sicurezza, applicare una copertura leggera. Evitare che il prodotto tocchi la pelle. Con la gel tip il gel va solo sulla zona salda; controllo dopo circa 2 settimane.",
+   "Leuconichia (macchie bianche): di solito traumi o limature troppo aggressive. Su una o poche unghie si può lavorare con mano leggera; su tutte e dieci, medico.",
+   "Emorragia a scheggia (linee sottili rosso scuro o bluastre sotto l'unghia): spesso un urto. Si può lavorare senza limare a fondo. Se è una linea lunga fino alla matrice o su più dita, medico.",
+   "Onicomicosi (fungo): macchia bianca o gialla che parte dal bordo libero, unghia spessa o fragile. Non si lavora. Cliente dal medico, strumenti disinfettati o buttati (lime), mascherina, mai usare lo stesso strumento sulle altre dita.",
+   "Pseudomonas (verde): nasce con umidità tra gel e unghia (sollevamenti, gel non polimerizzato, cuticole non sigillate). Giallino = inizio. Smontare, cambiare/sterilizzare gli strumenti, lasciare l'unghia scoperta circa 15 giorni (minimo una settimana). Verde scuro avanzato: farmacista o medico.",
+   "Paronichia (infiammazione attorno all'unghia, rossore, calore, dolore): non lavorare, medico. Cause: errori tecnici (cuticole forate), onicofagia, tagli. Evitare di spingere strumenti sotto la cuticola.",
+   "Allergie (rossore, prurito, bollicine, pelle che si screpola): quasi sempre contatto del prodotto con la pelle o gel non polimerizzato. Possono comparire anche dopo mesi. Rimuovere tutto, inviare al medico; si riprende solo con certificato. Valutare prodotti senza ingredienti sensibilizzanti noti.",
+   "Prevenzione: prodotto mai sulla pelle (anche primer e colore), guanti e mani pulite, lampada e polimerizzazione corrette. Meglio perdere un appuntamento che la fiducia della cliente.",
+ ], "Slide di sicurezza: usare il 'semaforo'. Verde = si lavora, giallo = con cautela, rosso = medico.", True),
+
+ ("16. Materiali da avere", [
+   "Gel Tip trasparenti in gamma completa di misure e forme.",
+   "Base/extension gel (anche rubber), deidratante, primer acid-free.",
+   "Mandrino con cilindro abrasivo, punta conica in ceramica, punta per rimuovere lo scalino, buffer.",
+   "Lampada/torcia per il blocco rapido.",
+   "Rimozione: remover per semipermanente, vaschetta o ciotola, pusher, eventuale alluminio e pad.",
+ ], "Elenco generico: i marchi li scegliamo noi, non quelli citati nel corso.", True),
+]
+SLIDE_PUNTI += [
+ ["Noi curiamo l'estetica, non la salute", "Anomalia su molte dita → medico", "Fungo, pseudomonas grave, paronichia, allergia → si ferma", "Prodotto mai sulla pelle"],
+ ["Gel tip trasparenti, tutte le misure", "Base/extension gel, deidratante, primer acid-free", "Mandrino, punta ceramica, punta scalino, buffer", "Torcia + lampada", "Remover, vaschetta, pusher"],
 ]

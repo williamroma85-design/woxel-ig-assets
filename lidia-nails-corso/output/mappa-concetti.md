@@ -10,9 +10,10 @@ Fonte: 27 lezioni video brevi (5 moduli + bonus). Le lezioni sono riscritte nell
 | 3 Scegliere e preparare | Scelta misura (2) · Preparare tip · Preparare tip piccole · Tip troppo grande | Provare scorrendo, combaciare col punto di crescita; opacizzare l'interno 15-18k giri | 8–9 |
 | 4 Applicazione | Passaggi tecnici · Inclinazione · Applicazione completa · Risultato finale · Rimozione scalino | Inclinazione, pressione centrale, gel che cammina, lampo 7-8 s, scalino da rimuovere | 10–12 |
 | 5 Rimozione | Metodo base · Strumenti | Taglia, togli colore con fresa, ammollo 5 min, pusher; si rifà ogni 3–6 settimane | 13–14 |
-| Bonus | Anomalie e patologie | **Non trascritto**: nessun audio nella lezione (probabile PDF/immagini) | – |
+| Bonus | Anomalie e patologie (49 min) | Quando agire e quando inviare al medico: onicolisi, leuconichia, emorragia a scheggia, fungo, pseudomonas, paronichia, allergie | 15 |
+| Materiali | Link materiali | Elenco attrezzi e prodotti (marchi da sostituire con i nostri) | 16 |
 
 ## Da completare
-- Lezione "Anomalie e patologie": servono materiali/screenshot.
+- Immagini di esempio per le anomalie (nel corso sono nelle slide video): da sostituire con foto nostre.
 - "Slide Modulo 1" (PDF del corso) usate solo come riscontro, non riprodotte.
 - Prodotti/marchi del corso volutamente tolti: da inserire i nostri.
