@@ -1,11 +1,11 @@
 """Genera gli schemi per le slide (SVG -> PNG con Chromium). Uso: python3 -I immagini.py"""
 import os, subprocess, textwrap
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(HERE, '..', 'output', 'immagini'); os.makedirs(OUT, exist_ok=True)
-ROSA, NERO, CIP, VER, ROS, GIA, GRI = '#B76E79', '#2B2B2B', '#F6ECE9', '#4E9F6B', '#C0453F', '#E0A82E', '#8A8A8A'
+ROSA, NERO, CIP, VER, ROS, GIA, GRI = '#34402F', '#2B2B2B', '#EDF2EB', '#4E9F6B', '#C0453F', '#C8A04A', '#6F7A6C'
 W, H = 800, 600
 
 def svg(body, h=H):
-    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" width="{W}" height="{h}" font-family="DejaVu Sans, Arial, sans-serif"><rect width="{W}" height="{h}" rx="28" fill="{CIP}"/>{body}</svg>'
+    return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {h}" width="{W}" height="{h}" font-family="Montserrat, sans-serif"><rect width="{W}" height="{h}" rx="28" fill="{CIP}"/>{body}</svg>'
 def t(x, y, s, size=22, fill=NERO, bold=False, anchor='middle'):
     return f'<text x="{x}" y="{y}" font-size="{size}" fill="{fill}" text-anchor="{anchor}" font-weight="{"700" if bold else "400"}">{s}</text>'
 def lines(x, y, ls, size=20, fill=NERO, gap=26, bold=False):
@@ -49,7 +49,7 @@ figs['tip-tipi'] = svg(b, 600)
 
 # 3. Mappa misure sulla mano
 b = title('Misure: dove vanno sulla mano')
-fingers = [(110, 330, 'pollice', '0 – 1', ROSA), (260, 200, 'indice', '2 – 6,5', '#D9A1A9'), (400, 160, 'medio', '2 – 6,5', '#D9A1A9'), (540, 200, 'anulare', '2 – 6,5', '#D9A1A9'), (670, 260, 'mignolo', '7 – 9', '#E9C3C8')]
+fingers = [(110, 330, 'pollice', '0 – 1', '#6F8A68'), (260, 200, 'indice', '2 – 6,5', '#8FA888'), (400, 160, 'medio', '2 – 6,5', '#8FA888'), (540, 200, 'anulare', '2 – 6,5', '#8FA888'), (670, 260, 'mignolo', '7 – 9', '#B4C8AE')]
 for x, top, n, r, c in fingers:
     b += f'<rect x="{x-45}" y="{top+60}" width="90" height="{440-top}" rx="45" fill="{c}"/><ellipse cx="{x}" cy="{top+110}" rx="30" ry="40" fill="#fff" opacity=".85"/>'
     b += t(x, 560, n, 17, NERO, True) + t(x, top + 120, r, 20, NERO, True)
@@ -115,9 +115,11 @@ for i, (c, n, ls) in enumerate(rows):
 b += t(W/2, 590, 'Noi curiamo l\'estetica, non la salute.', 17, GRI)
 figs['semaforo'] = svg(b, 610)
 
-html = '<html><body style="margin:0;background:#fff">' + ''.join(f'<div id="{k}" style="display:inline-block">{v}</div><br>' for k, v in figs.items()) + '</body></html>'
+FD = os.path.join(HERE, '..', 'brand', 'fonts')
+FF = ''.join(f"@font-face{{font-family:Montserrat;font-weight:{w};src:url(file://{os.path.abspath(os.path.join(FD, n))})}}" for w, n in [(400, 'Montserrat-Regular.ttf'), (700, 'Montserrat-SemiBold.ttf')])
+html = f'<html><head><style>{FF}</style></head><body style="margin:0;background:#fff">' + ''.join(f'<div id="{k}" style="display:inline-block">{v}</div><br>' for k, v in figs.items()) + '</body></html>'
 open(os.path.join(HERE, '_imm.html'), 'w').write(html)
-js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{deviceScaleFactor:2}});await p.goto('file://{os.path.join(HERE,'_imm.html')}');
+js = f"""const {{chromium}}=require('playwright');(async()=>{{const b=await chromium.launch();const p=await b.newPage({{deviceScaleFactor:2}});await p.goto('file://{os.path.join(HERE,'_imm.html')}');await p.evaluate(()=>document.fonts.ready);
 for (const k of {list(figs)!r}) await p.locator('#'+k).screenshot({{path:'{OUT}/'+k+'.png',omitBackground:true}});await b.close()}})()"""
 open(os.path.join(HERE, '_imm.js'), 'w').write(js)
 subprocess.run(['node', os.path.join(HERE, '_imm.js')], check=True)

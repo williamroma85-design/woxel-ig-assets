@@ -49,3 +49,12 @@ Attenzione: oro su avorio/salvia ha poco contrasto sul testo piccolo → oro sol
 - `proposte/<A|B|C>-...png`: loghi singoli su oliva, salvia, avorio.
 - `brand.py`: rigenera tutto (cambia font, testo, colori).
 - Prossimo passo dopo la scelta: logo in SVG vettoriale con testo convertito in tracciati, kit social (copertine highlight, template carosello), applicazione al corso.
+
+---
+## Decisione: proposta B · Mandorla (confermata)
+Kit consegnato in `brand/`:
+- `logo-finale/`: logo in SVG vettoriale (testo convertito in tracciati) + PNG trasparenti. Versioni orizzontale, verticale, emblema; colori oro, oliva, salvia, avorio. `avatar-*.png` 1080x1080.
+- `social-kit/`: template 1080x1350 (copertina carosello, pagina contenuto, regola, errore vs corretto, prima/dopo, CTA), cover reel 1080x1920, 6 copertine highlight. Testi modificabili in `social.py`.
+- `fonts/`: Playfair Display (titoli) e Montserrat (testi), open source: da installare per aprire le slide con il font corretto.
+- Guida PDF, mini guida e slide già ricolorate con la nuova identità.
+Regole d'uso logo: spazio libero attorno pari alla larghezza della "L"; minimo 120 px (orizzontale) / 40 px (emblema); oro su fondo oliva o avorio, oliva su salvia; mai deformare.
