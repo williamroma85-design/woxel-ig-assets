@@ -144,7 +144,7 @@ SLIDE_PUNTI = [
 
 # --- Bonus: anomalie (lezione di 49 min) e materiali ---
 SEZIONI += [
- ("15. Anomalie: quando agire e quando inviare al medico", [
+ ("15. Anomalie: quando fermarsi", [
    "Regola d'oro: noi curiamo l'estetica, non la salute. Mai prescrivere farmaci o antimicotici. Se qualcosa non ci è chiaro o non è normale: cliente dal medico o dermatologo.",
    "Criterio pratico: un trauma colpisce 1-3 unghie. Se l'anomalia è su molte o tutte le dita, ragionare come patologia e inviare dal medico.",
    "Onicolisi (distacco dell'unghia dal letto ungueale): da trauma parte dal bordo libero o dai laterali. Con sangue o dolore: accorciare, disinfettare, rimandare. Si lavora solo sulla parte ancora salda; se il distacco è circa metà unghia o più, non si ricostruisce.",

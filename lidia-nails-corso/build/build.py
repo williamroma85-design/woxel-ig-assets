@@ -49,16 +49,22 @@ def txt(s, t, x, y, w, h, size, bold=False, color='2B2B2B'):
 
 s = prs.slides.add_slide(blank); bg(s, 'F6ECE9')
 txt(s, BRAND.upper(), 0.9, 2.2, 11, 0.6, 20, True, 'B76E79'); txt(s, TITOLO, 0.9, 2.9, 11.5, 1.5, 48, True); txt(s, SOTTOTITOLO, 0.9, 4.6, 11, 0.6, 22, color='777777')
-for (t, pts, nota, on), brevi in zip(SEZIONI, SLIDE_PUNTI):
+IMMAGINI = {3: 'struttura-tip', 4: 'tip-tipi', 5: 'misure-mano', 6: 'unghia-naturale', 7: 'scelta-misura', 9: 'applicazione', 10: 'inclinazione', 12: 'rimozione', 14: 'semaforo'}
+for idx, ((t, pts, nota, on), brevi) in enumerate(zip(SEZIONI, SLIDE_PUNTI)):
     if not on: continue
     s = prs.slides.add_slide(blank); bg(s, 'FFFFFF')
     bar = s.shapes.add_shape(MSO_SHAPE.RECTANGLE, 0, 0, Inches(0.25), prs.slide_height); bar.fill.solid(); bar.fill.fore_color.rgb = rgb('B76E79'); bar.line.fill.background()
     txt(s, t, 0.9, 0.6, 11.5, 1.0, 36, True)
-    tf = txt(s, '', 0.9, 1.9, 11.5, 4.8, 24)
+    img = IMMAGINI.get(idx); imgp = os.path.join(OUT, 'immagini', (img or '') + '.png')
+    tf = txt(s, '', 0.9, 1.9, 6.1 if img else 11.5, 4.8, 24)
     first = True
     for p in brevi:
         para = tf.paragraphs[0] if first else tf.add_paragraph(); first = False
-        r = para.add_run(); r.text = '•  ' + p; r.font.size = Pt(28); r.font.name = 'Calibri'; r.font.color.rgb = rgb('2B2B2B'); para.space_after = Pt(18)
+        r = para.add_run(); r.text = '•  ' + p; r.font.size = Pt(24 if img else 28); r.font.name = 'Calibri'; r.font.color.rgb = rgb('2B2B2B'); para.space_after = Pt(18)
+    if img and os.path.exists(imgp):
+        from PIL import Image as _I; w, h = _I.open(imgp).size; wi = 5.5; hi = wi * h / w
+        if hi > 5.0: wi, hi = 5.0 * w / h, 5.0
+        s.shapes.add_picture(imgp, Inches(12.9 - wi), Inches(1.7), width=Inches(wi))
     txt(s, BRAND, 0.9, 6.9, 4, 0.4, 12, color='B76E79')
     s.notes_slide.notes_text_frame.text = nota + "\n\nDettaglio:\n" + "\n".join("- " + p for p in pts)
 prs.save(os.path.join(OUT, 'slide-lezione.pptx'))
